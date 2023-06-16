@@ -59,7 +59,7 @@ function adicionarDados(grafico, legenda, dados){
     grafico.update();
 }
 
-let workerDolar = new Worker('./workers/workerDolar.js');
+let workerDolar = new Worker('./assets/js/workers/workerDolar.js');
 workerDolar.postMessage('usd');
 workerDolar.addEventListener("message", event => {
     let tempo = geraHorario();
@@ -68,7 +68,7 @@ workerDolar.addEventListener("message", event => {
     selecionaCotacao("dolar", valor);
 })
 
-let workerIene = new Worker('./workers/workerIene.js');
+let workerIene = new Worker('./assets/js/workers/workerIene.js');
 workerIene.postMessage('iene');
 workerIene.addEventListener("message", event => {
     let tempo = geraHorario();
@@ -77,7 +77,7 @@ workerIene.addEventListener("message", event => {
     selecionaCotacao("iene", valor);
 })
 
-let workerEuro = new Worker('./workers/workerEuro.js');
+let workerEuro = new Worker('./assets/js/workers/workerEuro.js');
 workerEuro.postMessage('euro');
 workerEuro.addEventListener("message", event => {
     let tempo = geraHorario();
